@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gera_Kanban_Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="author" content="Gerardo Valdez">
+    <meta name="description" content="Kanban Board web application using the flask framework">
+      <style>
+        h1 {color:blue;}
+        td {color:white;}
+      </style>
+  </head>
+  
+    <div class="background"  style="background-image: url('img/GoldenGate.jpg'); background-size: cover; "> </div>
+  
+  <body>
+    
+    <div class="content">
+    
+    <br>
+    <h1 style="text-align:center;">Gera’s Kanban Board</h1>
+    
+    
+    <table>
+      <tr>
+        <th><font size="+2">To Do</font></th>
+        <th><font size="+2">Doing</font></th>
+        <th><font size="+2">Done</font></th>
+      </tr>
+      {% for task in tasks %}
+      <tr>
+        <td>{{ task.content }}</td>
+        <td>Doing Example 1</td>
+        <td>Done Example 1</td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+    <br>
+    
+        <div class=“form”>
+      
+          <form action="/" method="POST">
+            <input type="text" name="content">
+            <input type="submit" value="Add Task">
+          </form>
+      
+        </div> <!-- “form” -->
+    
+    </div> <!-- "content" -->
+    
+    
+  </body>
+</html>
